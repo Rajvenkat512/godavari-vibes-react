@@ -2,17 +2,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ShoppingCart, Heart } from "lucide-react";
 
-interface ProductCardProps {
-  id: string;
-  name: string;
-  image: string;
-  price: number;
-  originalPrice?: number;
-  rating?: number;
-  isNew?: boolean;
-  isFeatured?: boolean;
-}
-
 const ProductCard = ({ 
   name, 
   image, 
@@ -21,7 +10,7 @@ const ProductCard = ({
   rating = 5,
   isNew = false,
   isFeatured = false 
-}: ProductCardProps) => {
+}) => {
   const discount = originalPrice ? Math.round(((originalPrice - price) / originalPrice) * 100) : 0;
 
   return (
